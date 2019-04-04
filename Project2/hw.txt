@@ -1,0 +1,88 @@
+1.
+endlendl
+endline
+
+
+
+2. It prints a diagonal line of sharps
+
+    #
+   #
+  #
+ #
+#
+
+
+
+3.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int len;
+
+    cout << "Enter a number: ";
+    cin >> len;
+
+
+    for(int i = 0; i < len; i++)
+    {
+    	int j = i + 1;
+	    while(j < len)
+	    {
+	        cout << " ";
+	        j++;
+	    }
+	    cout << "#" << endl;
+    }
+}
+
+
+
+4.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int len;
+
+    cout << "Enter a number: ";
+    cin >> len;
+
+    if(len > 0)
+    {
+    	int i = 0;
+	    do
+	    {
+	    	for (int j = i + 1; j < len; j++)
+			    {
+			        cout << " ";
+			    }
+			cout << "#" << endl;
+		    i++;
+	    }
+	    while(i < len);
+    }	
+}
+
+
+
+5.
+switch(weekday)
+{
+	case 1:
+		cout << "rainy days and mondays get me down\n";
+		break;
+	case 2:
+		cout << "ruby tuesday\n";
+		break;
+	case 6: 
+	case 7:
+		cout << "wonderful weekend\n";
+		break;
+	default:
+		cout << "regular day\n";
+		break;
+}

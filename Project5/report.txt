@@ -1,0 +1,126 @@
+604905807
+Andrew Yong
+
+1) An obstacle I overcame was debugging my code when my linker didn't work. It turned out to be because I didn't do AppleStore::function in my ApppleStore.cpp. Took forever to find...
+
+2)
+AppleProduct p; 
+Kind should be 0
+Version should be 
+Color should be 
+Cost should be 0.000000
+
+AppleProduct p1( AppleProduct::IPHONE, "8", "Space Grey", 699.00 );
+Kind should be 1
+Version should be 8
+Color should be Space Grey
+Cost should be 699.000000
+	
+
+AppleStore store;
+
+
+AppleProduct watch1 = store.buyWatch1("Space Grey");
+Kind should be 3
+Version should be 1
+Color should be Space Grey
+Cost should be 249.000000
+
+AppleProduct watch3 = store.buyWatch3("Space Grey");
+Kind should be 3
+Version should be 3
+Color should be Space Grey
+Cost should be 329
+
+
+
+
+AppleProduct iphone8_64 = store.buyiPhone8("Space Grey", 64);
+Kind should be 1
+Version should be 8
+Color should be Space Grey
+Cost should be 699
+
+AppleProduct iphone8_256 = store.buyiPhone8("Space Grey", 256);
+Kind should be 1
+Version should be 8
+Color should be Space Grey
+Cost should be 849
+
+AppleProduct iphone8_256 = store.buyiPhone8("Space Grey", 69);
+ERROR
+
+
+
+
+AppleProduct iphoneX_64 = store.buyiPhoneX("Space Grey", 64);
+Kind should be 1
+Version should be X
+Color should be Space Grey
+Cost should be 999
+
+AppleProduct iphoneX_256 = store.buyiPhoneX("Space Grey", 256);
+Kind should be 1
+Version should be X
+Color should be Space Grey
+Cost should be 1149
+
+AppleProduct iphoneX_256 = store.buyiPhoneX("Space Grey", 69);
+ERROR
+
+
+
+
+AppleProduct iphone8plus_64 = store.buyiPhone8Plus("Space Grey", 64);
+Kind should be 1
+Version should be 8Plus
+Color should be Space Grey
+Cost should be 799
+
+AppleProduct iphone8plus_256 = store.buyiPhone8Plus("Space Grey", 256);
+Kind should be 1
+Version should be 8Plus
+Color should be Space Grey
+Cost should be 
+
+AppleProduct iphone8plus_256 = store.buyiPhone8Plus("Space Grey", 69);
+ERROR
+
+
+AppleProduct ipad_32 = store.buyiPad("Space Grey", 32);
+Kind should be 2
+Version should be 
+Color should be Space Grey
+Cost should be 329
+
+AppleProduct ipad_128 = store.buyiPad("Space Grey", 128);
+Kind should be 2
+Version should be
+Color should be Space Grey
+Cost should be 429
+
+AppleProduct ipad_32 = store.buyiPad("Space Grey", 69);
+ERROR
+
+
+
+AppleProduct ipadpro_64 = store.buyiPadPro("Space Grey", 64);
+Kind should be 2
+Version should be Pro
+Color should be Space Grey
+Cost should be 649
+
+AppleProduct ipadpro_256 = store.buyiPadPro("Space Grey", 256);
+Kind should be 2
+Version should be Pro
+Color should be Space Grey
+Cost should be 799
+
+AppleProduct ipadpro_512 = store.buyiPadPro("Space Grey", 512);
+Kind should be 2
+Version should be Pro
+Color should be Space Grey
+Cost should be 999
+
+AppleProduct ipadpro_512 = store.buyiPadPro("Space Grey", 69);
+ERROR

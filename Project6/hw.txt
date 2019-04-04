@@ -1,0 +1,129 @@
+Problem 1:
+
+a.  It's just printing it incorrectly. The array itself is fine  
+
+int main()
+{
+    int arr[4] = { 0, 1, 2, 3 };
+    int* ptr = arr;
+
+    *ptr = arr[ 1 ];               // set arr[0] to 1
+    * ( ptr + 1 ) = arr[ 0 ] * 10;      // set arr[1] to 10
+    ptr += 2; 
+    ptr[0] = arr[ 1 ] * 10;        // set arr[2] to 100
+    ptr[1] = 1000;                 // set arr[3] to 1000
+
+    ptr++;
+    cout << *ptr;
+
+    while (ptr > arr)
+    {
+        ptr--; 
+        cout << " " << *ptr;    // print values
+    }
+    cout << endl; 
+    return( 0 ); 
+}
+
+b.  Inputting ptr into the function creates a copy of the pointer, and doesn't change ptr outside the function. Therefore ptr needs to be passed by reference so that the function changes ptr
+
+void findLastZero(int arr[], int n, int* &p)
+{
+    p = nullptr;    /// default value if there isn't a 0 in the array at all
+    for (int k = n - 1; k >= 0; k--) 
+    {
+        if (arr[k] == 0)      // found an element whose value is 0
+        { 
+             p = arr + k;     // change the value of p
+             break;           // stop looping and return
+        } 
+    }
+}     
+
+c.  The pointer being inputted into the function wasn't initialized, so it doesn't have an address to point to. Therefore changing it's value in the function doesn't make sense.
+
+int main()
+{
+    int x;
+    int* p = &x;
+    biggest(15, 20, p);
+    cout << "The biggest value is " << *p << endl;
+    return( 0 );
+}
+
+d.  The problem is that the original program is comparing the memory addresses of the characters instead of the actually characters. So adding * in front of everything correctly compares the characters.
+
+bool match(const char str1[], const char str2[])
+{
+    bool result = true;
+    while (*str1 != 0  &&  *str2 != 0)  // zero bytes at ends
+    {
+        if (*str1 != *str2)  // compare corresponding characters
+        {
+            result = false;
+            break;
+        }
+        str1++;            // advance to the next character
+        str2++;
+    }
+    if (result)
+    {
+        result = (*str1 == *str2);    // both ended at same time?
+    }
+    return( result );
+}
+
+e.  Arr is destroyed afterwards, so it doesn't make sense to point to it later because it doesn't exist. 
+
+
+
+
+Problem 2:  
+1. f
+2. g 
+3. a
+4. b
+5. d
+6. c
+7. b
+8. e
+9. h  	
+
+
+
+Problem 3:
+
+Line 30: ptr => array[2]
+Line 31: array = { 5, 3, 4, 9, 22, 19 }
+Line 32: ptr => array[4]
+Line 33: array = { 5, 3, 4, 9, -1, 19 }
+Line 34: array = { 5, 79, 4, 9, -1, 19 }
+Line 36: Prints memory distance between array[5] and array[4]. Which is 1
+LIne 38: Doesn't do anything because the pointers are copied
+Line 39: Swaps array[0] and array[2] because it dereferences the pointers: array = { 4, 79, 5, 9, -1, 19 }
+Line 41 - 42: Prints out current array
+
+Output: 
+diff=1
+5
+79
+4
+9
+-1
+19
+
+
+
+Problem 4: 
+
+void deleteCapitals(char* p)
+{
+    while(*p != 0)
+    {
+        if(*p >= 65 && *p <= 90)
+        {
+            *p = ' ';
+        }
+        p++;
+    }
+}

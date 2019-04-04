@@ -1,0 +1,115 @@
+Andrew Yong
+604905807
+
+
+a) My biggest obstacle was planning the project around the restrictions that forced how we did the project. isValidEbayListingString basically solves the problem, and the other functions are useless in helping to splitting up isValidEbayListingString into smaller functions (since the parameters for the other functions is the whole string). This made it harder to do isValidEbayListingString and made it frustrating to plan out the project. I just powered through it though. But the other functions are pretty much copies of isValidEbayListingString now
+
+
+
+
+
+b) 
+isValidEbayListingString()
+{
+	check if L is first letter
+	turn on "listingmode," which extracts the listing price numbers
+	for loop through the rest of the string
+	{
+		if(listingmode)
+		{
+			extract numbers 
+			if no more numbers, turn off listingmode
+		}
+
+		if(B)
+		{
+			turn on "bidmode," which extracts the bid price numbers
+		}
+
+		if(bidmode)
+		{
+			if(first bid)
+			{
+				extract numbers
+				if no more numbers, turn off bidmore and store values
+			}
+			else if not first bid
+			{
+				make sure first thing is +
+				then extract numbers
+				if no more numbers, turn off bidmode
+			}
+		}
+
+		if(W)
+		{
+			watchers++
+			turn on unwatching
+		}
+
+		if(U)
+		{
+			if(watching has occured before && watchers - 1 > 0)
+			{
+				watchers--
+			}
+		}
+	}
+}
+
+howMuch()
+{
+	ran string through isValidEbayListingString
+	copied isValidListingString, but deleted watcher section
+	added section to compare values of listedPrice and totalBids
+}
+
+listedPrice()
+{
+	if(howMuch(string) > 0)
+	{
+		return true;;
+	}
+	return false;
+}
+
+watchers()
+{
+	ran string through isValidEbayListingString
+	copied isValidString, but deleted bidding and listing stuff
+}
+
+
+
+
+
+
+C)
+Invalid strings:
+
+"B": L is not first letter
+"L": No listing price
+"LW": No listing price
+"L0": No listing price
+"L100L100": Can't double list
+"L100B10U": Can't unwatch before unwatching
+"L100B10B10": Can't double initial bid
+WWWUUUUUUUUUU
+B+ B
+
+
+
+Valid strings:
+
+"L0001"
+"L100"
+"l100b10"
+"L100B10W": 
+"L100B10B+10"
+"L100BW"
+
+
+
+
+
+

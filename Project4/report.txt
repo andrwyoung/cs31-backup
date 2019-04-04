@@ -1,0 +1,90 @@
+2. A file named report.doc or report.docx (in Microsoft Word format) or report.txt (an ordinary text file) that contains in addition your name and your UCLA Id Number:
+
+a. A brief description of notable obstacles you overcame.
+
+b. A list of the test data that could be used to thoroughly test your functions, along with the reason for each test. You must note
+which test cases your program does not handle correctly. (This could happen if you didn't have time to write a complete solution, or if you ran out of time while still debugging a supposedly complete solution.) Notice that most of this portion of your report can be written just after you read the requirements in this specification, before you even start designing your program.
+
+
+Andrew Yong
+604905807
+
+a) An obstacle I faced was rearranging the strings in the removeDuplicatedValues functions. I solved this by creating a placeholder string.
+
+b) 
+	std::string num[] = {"1", "2", "3", "4", "5"};
+	findMinimum(num, 5);
+reason: 
+makes sure the program makes sense when comparing the strings
+
+	
+
+	std::string a[] = {"a", "b", "cfefefefefe", "d", "e"};
+	findMinimum(a, 5);
+reason: 
+makes sure the program compares the strings again
+
+
+
+	std::string ran[] = {"fe??kf'lje", ".3.3.63", "st?aw!re-", ","};
+	countAllPunctuation(ran, 4);
+reason: 
+checks the punctuation marks
+notes:
+there are 10 punctuation marks in there
+I'm not to sure how to count the " marks because I wasn't sure how you guys were going to do it. But hope it works!
+
+
+
+	std::string flo[] = {"1.11", "4444", ".111", "0000", "0.009", "0."};
+	countFloatingPointValues(flo, 6);
+reason: 
+makes sure floating point values work
+notes:	
+third value and last value should be wrong because it should be #.#
+fourth value I put as correct because it's still a floating point value
+
+
+
+	std::string one[] = {"one", "two", "one", "four", "five", "five", "five", "one"};
+	removeDuplicatedValues(one, 7);	
+reason: 
+checks that it works
+notes:
+there are 8 values in the array, but n == 7 to show that the last "one" is still in the list
+
+
+
+	std::string abc[] = {"feaaakfje", "aaa", "bbb", "ccaac"};
+	replaceAll(abc, 4, 'a', 'z');
+reason: 
+check that it replaces letters
+
+
+
+	std::string a[] = {"a", "b", "c", "d", "e"};
+	shiftRight(a, 3, 2, "one");
+reason: 
+check that it replaces strings
+notes:
+there are only 6 values in the array, but n == 3 to show that "d" and "e" are unchanged
+
+
+	std::string poo[] = {""};
+	findMinimum(poo, -1);
+	countAllPunctuation(poo, -2);
+	countFloatingPointValues(poo, -3);
+	removeDuplicatedValues(poo, -4);
+	replaceAll(poo, -5, 'a', 'z');
+	shiftRight(poo, -6, 2, "one");
+reason:
+should return -1
+
+
+
+
+
+
+
+
+

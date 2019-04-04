@@ -1,0 +1,66 @@
+604905807
+Andrew Yong
+
+a) I had understanding the code, but looking at it more closely helped
+b) 
+NumberSet set( 1, 2, 3, 4, 5, 6, 7, 8 );
+assert(set.notFound( 0 ));
+assert(!set.notFound( 1 ));
+assert(!set.notFound( 2 ));
+assert(!set.notFound( 3 ));
+assert(!set.notFound( 4 ));
+assert(!set.notFound( 5 ));
+assert(!set.notFound( 6 ));
+assert(!set.notFound( 7 ));
+assert(!set.notFound( 8 ));
+assert(set.notFound( 9 ));
+assert(set.stringify() == "SET-12345678");
+      
+Cell c;
+c.setValue(1);
+assert( c.getValue() == 1 );
+assert( !c.isImmutable() );
+c.setValue(2);
+c.setImmutable( true );
+assert( c.getValue() == 2 );
+assert( c.isImmutable() );
+
+assert( c.isValueOK( 0, ns, ns, ns ) );
+assert( !c.isValueOK( 1, ns, ns, ns ) );
+assert( !c.isValueOK( 2, ns, ns, ns ) );
+assert( !c.isValueOK( 3, ns, ns, ns ) );
+assert( !c.isValueOK( 4, ns, ns, ns ) );
+assert( !c.isValueOK( 5, ns, ns, ns ) );
+assert( !c.isValueOK( 6, ns, ns, ns ) );
+assert( !c.isValueOK( 7, ns, ns, ns ) );
+assert( !c.isValueOK( 8, ns, ns, ns ) );
+assert( c.isValueOK( 9, ns, ns, ns ) );
+
+assert( !c.isOKToSetValue( 0, ns, ns, ns ) );
+assert( !c.isOKToSetValue( 1, ns, ns, ns ) );
+assert( !c.isOKToSetValue( 2, ns, ns, ns ) );
+assert( !c.isOKToSetValue( 3, ns, ns, ns ) );
+assert( !c.isOKToSetValue( 4, ns, ns, ns ) );
+assert( !c.isOKToSetValue( 5, ns, ns, ns ) );
+assert( !c.isOKToSetValue( 6, ns, ns, ns ) );
+assert( !c.isOKToSetValue( 7, ns, ns, ns ) );
+assert( !c.isOKToSetValue( 8, ns, ns, ns ) );
+assert( !c.isOKToSetValue( 9, ns, ns, ns ) );
+
+Game g;
+g.cheat("123456789|.........|987321456|456987123|.........|312645978|.........|.........|.........");
+
+assert(g.display() == "123|456|789\n...|...|...\n987|321|456\n-----------\n456|987|123\n...|...|...\n312|645|978\n-----------\n...|...|...\n...|...|...\n...|...|...\n");
+assert(g.evaluate() == 36 );
+assert(!g.completed() );
+
+assert(!g.acceptValue(0, 1, 1) );
+assert(!g.acceptValue(7, 1, 1) );
+assert(g.display() == "123|456|789\n...|...|...\n987|321|456\n-----------\n456|987|123\n...|...|...\n312|645|978\n-----------\n...|...|...\n...|...|...\n...|...|...\n");
+assert(g.evaluate() == 36 );
+assert(!g.completed() );
+
+Board h;
+h.cheat();
+cout << h.stringify() << '\n';
+assert(h.evaluate() == 0);
